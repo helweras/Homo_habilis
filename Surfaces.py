@@ -2,7 +2,6 @@ import pygame
 from pygame.sprite import Sprite
 
 
-
 class Surface(Sprite):
     """Класс описывающий поведение поверхности на которой будут находиться объекты"""
 

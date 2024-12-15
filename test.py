@@ -2,6 +2,19 @@ import random
 from math import sqrt
 import time
 import numpy as np
+import pygame
+from pygame.sprite import Sprite
+import pathlib
+from Tree import Tree
+import cProfile
+import pstats
+
+sss = pygame.sprite.Group()
+
+
+def add_tree():
+    tree = Tree()
+    sss.add(tree)
 
 
 class StudentTest:
@@ -39,7 +52,7 @@ class StudentTest:
             for i in range(it):
                 fun()
         stop = time.perf_counter()
-        print(f'Время работы функции {stop - start} секунд при {it} итерациях')
+        print(f'Время работы функции {fun.__name__} {stop - start} секунд при {it} итерациях')
 
     def get_se(self):
         se = sqrt((self.sd_list[0] * self.sd_list[0]) / self.n + (self.sd_list[1] * self.sd_list[1]) / self.n)
@@ -131,5 +144,5 @@ def random_num():
         return 3
 
 
-test = StudentTest(random_ch, random_num, False, False)
-test.start_test(100000)
+
+
